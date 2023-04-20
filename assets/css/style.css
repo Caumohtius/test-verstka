@@ -1,0 +1,95 @@
+/* @import
+============================================*/
+
+@import url(fonts.css);
+@import url(normalize.css);
+
+/* Global
+============================================*/
+html {
+	font-size: 16px;
+}
+body {
+	font-family: EuclidCA, sans-serif;
+	color: #050A1B;
+}
+h1, h2, h3, .h1, .h2, .h3 {
+	font-weight: 600;
+}
+h1, .h1 {
+	font-size: 68px;
+	line-height: 1;
+}
+h2, .h2 {
+	font-size: 40px;
+	line-height: 1.2;
+}
+h3, .h3 {
+	font-size: 28px;
+	line-height: 1;
+}
+
+/* Buttons
+============================================*/
+
+.button {
+	padding: 13px 28px;
+	font-size: 16px;
+	line-height: 1.4;
+	font-weight: 500;
+	background-color: #0432D3;
+	color: #fff;
+	border: none;
+	transition: all .3s;
+}
+.button:hover {
+	background-color: #1B4DFF;
+	cursor: pointer;
+}
+.button:active {
+	background-color: #0024A4;
+	color: rgba(255, 255, 255, .7);
+}
+.button:disabled {
+	background-color: #E8EBF3;
+	color: #A6ACBB;
+	cursor: initial;
+}
+
+.button_secondary:not(:disabled) {
+	background-color: transparent;
+	box-shadow: inset 0 0 0 2px #0432D3;
+	color: #0432D3;
+}
+.button_secondary:not(:disabled):hover {
+	background-color: transparent;
+	box-shadow: inset 0 0 0 2px #1B4DFF;
+	color: #1B4DFF;
+	cursor: pointer;
+}
+.button_secondary:not(:disabled):active {
+	background-color: transparent;
+	box-shadow: inset 0 0 0 2px #0024A4;
+	color: #0024A4;
+}
+
+.button_ghost > a {
+	padding: 0;
+	text-decoration: none;
+	color: #050A1B;
+	transition: all .3s;
+}
+.button_ghost > a:hover {
+	color: #1B4DFF;
+	cursor: pointer;
+}
+.button_ghost > a:active {
+	color: #0024A4;
+}
+.button_ghost > a:disabled {
+	color: #A6ACBB;
+	cursor: initial;
+}
+
+/* Header
+============================================*/
