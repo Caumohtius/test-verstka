@@ -6,71 +6,76 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="assets/css/style.css">
 	<title>Link Card</title>
-	<link>
+	<script src="js/jquery.min.js"></script>
+	<script src="js/jquery.maskedinput.min.js"></script>
 </head>
 <body>
 	<header class="header">
 
 		<div class="header-inner">
-			<div class="button_ghost">
-				<a class="link" href="/">Back</a>
-			</div>
+			<a href="/" class="button button_ghost button-back">
+				<span class="button-back__icon icon-arr-right"></span>
+				<span class="button-back__text">Back</span>
+			</a>
 
-			<div class="logo">slash</div>
+			<a href="/" class="logo"></a>
 
-			<button class="button">Skip</button>
 			<button class="button button_secondary">Skip</button>
-			<button class="button button_secondary" disabled>Skip</button>
 		</div>
 		
 	</header>
 
-	<main class="container">
+	<main class="link-card container">
 		<div class="steps">
-			<span class="steps__item">-</span>
-			<span class="steps__item">-</span>
-			<span class="steps__item steps__item_active">-</span>
+			<span class="steps__item"></span>
+			<span class="steps__item"></span>
+			<span class="steps__item steps__item_active"></span>
 		</div>
 
-		<h3 class="h3">
+		<h3 class="h3 text-center">
 			Connect your bank card
 		</h3>
 
-		<div>
+		<div class="link-card__text text-center">
 			You'll get discounted prices when shopping with Slash using this card. Your data will be stored on secure servers using industry standard encryption and will not be shared with any third party.
 		</div>
 
-		<form id="link-card" action="#" method="">
-			<div>
-				<label for="cc-number">Card number</label>
-				<input id="cc-number" name="cc-number" autocomplete="cc-number" inputmode="numeric" maxlength="16" pattern="[\d ]{10,30}" required>
+		<form id="link-cc" action="#" method="">
+			<div class="text-field">
+				<label class="text-field__label" for="cc-number">Card number</label>
+				<input class="text-field__input" id="cc-number" name="cc-number" autocomplete="cc-number" inputmode="numeric" maxlength="16" placeholder="0000     0000     0000     0000" required>
 			</div>
 
-			<div>        
-				<label for="cc-name">Cardholder name</label>
-				<input id="cc-name" name="cc-name" autocomplete="cc-name" maxlength="50" pattern="[\p{L} \-\.]+" required>
+			<div class="text-field">
+				<label class="text-field__label" for="cc-name">Cardholder name</label>
+				<input class="text-field__input" id="cc-name" name="cc-name" autocomplete="cc-name" maxlength="50" placeholder="Name Surname" required>
 			</div>
 
-			<div>
-				<label for="cc-exp">Expiry date</label>
-				<input id="cc-exp" name="cc-exp" autocomplete="cc-exp" placeholder="MM/YY" maxlength="5" required>
+			<div class="text-field">
+				<label class="text-field__label" for="cc-exp">Expiry date</label>
+				<input class="text-field__input" id="cc-exp" name="cc-exp" autocomplete="cc-exp" placeholder="MM/YY" maxlength="5" required>
 			</div>
 
-			<div>
-				<div>
-					<label for="cc-csc">CVV/CVC</label>
-					<div style="display: inline-block">@</div>
+			<div class="text-field">
+				<div class="tooltip__wrapper">
+					<label class="text-field__label" for="cc-sc">CVV/CVC</label>
+					<span class="icon-info"></span>
+					<div class="tooltip">
+						3 digits on the back of your card.
+						<span class="icon-cross"></span>
+					</div>
 				</div>
-				<input id="cc-csc" name="cc-csc" inputmode="numeric" maxlength="3" required>
+				<input class="text-field__input" id="cc-sc" name="cc-sc" inputmode="numeric" maxlength="3" placeholder="000" required>
 			</div>
 		</form>
 	</main>
 
 	<footer class="footer">
 		<div class="container">
-			<div class="box">
-				<button class="button" type="submit" form="link-card">
-					Connect @
+			<div class="footer__box">
+				<button class="button button_vs-icon" type="submit" form="link-cc">
+					<span class="button__text">Connect</span>
+					<span class="button__icon icon-secure"></span>
 				</button>
 
 				<div class="bank-cards">
@@ -80,10 +85,20 @@
 					<div class="bank-cards__item">card4</div>
 				</div>
 			</div>
-			<div>
+			<div class="footer__description">
 				We'll charge and refund €1 to check if the card is valid.
 			</div>
 		</div>
 	</footer>
+
 </body>
+
+<script type="text/javascript">
+	jQuery(function($){
+		$('#cc-number').mask('9999     9999     9999     9999', {placeholder: '0'});
+		$('#cc-exp').mask('99/99', {placeholder: 'MM/YY'});
+		$('#cc-sc').mask('999', {placeholder: '000'});
+	});
+</script>
+
 </html>
