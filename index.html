@@ -15,6 +15,7 @@
 		<div class="header-inner">
 			<a href="/" class="button button_ghost button-back">
 				<span class="button-back__icon icon-arr-right"></span>
+				<span class="button-back__icon icon-arr-button"></span>
 				<span class="button-back__text">Back</span>
 			</a>
 
@@ -32,7 +33,7 @@
 			<span class="steps__item steps__item_active"></span>
 		</div>
 
-		<h3 class="h3 text-center">
+		<h3 class="link-card__caption text-center">
 			Connect your bank card
 		</h3>
 
@@ -40,32 +41,32 @@
 			You'll get discounted prices when shopping with Slash using this card. Your data will be stored on secure servers using industry standard encryption and will not be shared with any third party.
 		</div>
 
-		<form id="link-cc" action="#" method="">
-			<div class="text-field">
+		<form class="card-form" id="link-cc" action="#" method="">
+			<div class="text-field card-form__number">
 				<label class="text-field__label" for="cc-number">Card number</label>
 				<input class="text-field__input" id="cc-number" name="cc-number" autocomplete="cc-number" inputmode="numeric" maxlength="16" placeholder="0000     0000     0000     0000" required>
 			</div>
 
-			<div class="text-field">
-				<label class="text-field__label" for="cc-name">Cardholder name</label>
-				<input class="text-field__input" id="cc-name" name="cc-name" autocomplete="cc-name" maxlength="50" placeholder="Name Surname" required>
-			</div>
-
-			<div class="text-field">
-				<label class="text-field__label" for="cc-exp">Expiry date</label>
-				<input class="text-field__input" id="cc-exp" name="cc-exp" autocomplete="cc-exp" placeholder="MM/YY" maxlength="5" required>
-			</div>
-
-			<div class="text-field">
-				<div class="tooltip__wrapper">
-					<label class="text-field__label" for="cc-sc">CVV/CVC</label>
-					<span class="icon-info"></span>
-					<div class="tooltip">
-						3 digits on the back of your card.
-						<span class="icon-cross"></span>
-					</div>
+			<div class="card-form__box">
+				<div class="text-field card-form__name">
+					<label class="text-field__label" for="cc-name">Cardholder name</label>
+					<input class="text-field__input" id="cc-name" name="cc-name" autocomplete="cc-name" maxlength="50" placeholder="Name Surname" required>
 				</div>
-				<input class="text-field__input" id="cc-sc" name="cc-sc" inputmode="numeric" maxlength="3" placeholder="000" required>
+				<div class="text-field card-form__exp">
+					<label class="text-field__label" for="cc-exp">Expiry date</label>
+					<input class="text-field__input" id="cc-exp" name="cc-exp" autocomplete="cc-exp" placeholder="12/23" maxlength="5" required>
+				</div>
+				<div class="text-field card-form__sc">
+					<div class="tooltip__wrapper">
+						<label class="text-field__label" for="cc-sc">CVV/CVC</label>
+						<span class="icon-info"></span>
+						<div class="tooltip">
+							3 digits on the back of your card.
+							<span class="icon-cross"></span>
+						</div>
+					</div>
+					<input class="text-field__input" id="cc-sc" name="cc-sc" inputmode="numeric" maxlength="3" placeholder="000" required>
+				</div>
 			</div>
 		</form>
 	</main>
@@ -73,20 +74,19 @@
 	<footer class="footer">
 		<div class="container">
 			<div class="footer__box">
-				<button class="button button_vs-icon" type="submit" form="link-cc">
-					<span class="button__text">Connect</span>
-					<span class="button__icon icon-secure"></span>
-				</button>
+				<div>
+					<button class="button button_vs-icon" type="submit" form="link-cc">
+						<span class="button__text">Connect</span>
+						<span class="button__icon icon-secure"></span>
+					</button>
+					<div class="footer__description">
+						We'll charge and refund €1 to check if the card is valid.
+					</div>
+				</div>
 
 				<div class="bank-cards">
-					<div class="bank-cards__item">card1</div>
-					<div class="bank-cards__item">card2</div>
-					<div class="bank-cards__item">card3</div>
-					<div class="bank-cards__item">card4</div>
+					<div class="bank-cards__card bank-cards__card_1"></div><div class="bank-cards__card bank-cards__card_2"></div><div class="bank-cards__card bank-cards__card_3"></div>
 				</div>
-			</div>
-			<div class="footer__description">
-				We'll charge and refund €1 to check if the card is valid.
 			</div>
 		</div>
 	</footer>
